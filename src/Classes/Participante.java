@@ -13,7 +13,6 @@ public class Participante extends IPessoa {
         this.isVip = isVip;
     }
 
-
     public void comprarIngresso(Evento evento) {
         try {
             if(saldo < evento.getPrecoVip()) throw new Exception("Saldo Insuficiente!");
@@ -22,5 +21,17 @@ public class Participante extends IPessoa {
         } catch (Exception err) {
             System.out.println("[ERRO] "+ err.getMessage());
         }
+    }
+
+    public Ingresso getIngresso() {
+        return ingresso;
+    }
+
+    public boolean isVip() {
+        return isVip;
+    }
+
+    public double getSaldo() {
+        return saldo;
     }
 }
