@@ -6,13 +6,23 @@ public class Evento {
     private int eventoId;
     private int lotacaoMaxima;
     private double precoBase;
+    private double precoVip;
     private ArrayList<Ingresso> ingressosGerados;
     private Relatorio relatorio = new Relatorio(this);
+
+    public double getPrecoVip() {
+        return precoVip;
+    }
+
+    public void setPrecoVip(double precoVip) {
+        this.precoVip = precoVip;
+    }
 
     public Evento(int eventoId, int lotacaoMaxima, double preco_base) {
         this.eventoId = eventoId;
         this.lotacaoMaxima = lotacaoMaxima;
         this.precoBase = preco_base;
+        this.precoVip = (preco_base * 0.5)  + preco_base;
     }
 
     public Relatorio getRelatorio() {
