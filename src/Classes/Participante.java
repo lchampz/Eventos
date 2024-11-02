@@ -13,25 +13,23 @@ public class Participante extends IPessoa {
         this.isVip = isVip;
     }
 
-    public void comprarIngresso(Evento evento) {
-        try {
-            if(saldo < evento.getPrecoVip()) throw new Exception("Saldo Insuficiente!");
-            this.ingresso = evento.gerarIngresso(isVip);
-            this.saldo -= this.ingresso.getPreco();
-        } catch (Exception err) {
-            System.out.println("[ERRO] "+ err.getMessage());
-        }
+    public boolean isVip() {
+        return isVip;
     }
 
     public Ingresso getIngresso() {
         return ingresso;
     }
 
-    public boolean isVip() {
-        return isVip;
+    public void setIngresso(Ingresso ingresso) {
+        this.ingresso = ingresso;
     }
 
     public double getSaldo() {
         return saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
     }
 }
