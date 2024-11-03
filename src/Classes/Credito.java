@@ -17,6 +17,7 @@ public class Credito implements IPagamento {
             } else {
                 if(participante.getSaldo() < evento.getPrecoBase()) throw new Exception("Saldo Insuficiente!");
             }
+            System.out.println("Participante " + participante.getNome() + " comprou ingresso do tipo " + (participante.isVip() ? "VIP" : "normal") + " para o evento de id " + evento.geteventoId() + " compra feita no crédito");
             participante.setIngresso(evento.gerarIngresso(participante.isVip()));
             participante.setSaldo(participante.getSaldo() - (participante.getIngresso().getPreco() + (participante.getIngresso().getPreco() * tax)));
         } catch (Exception err) {

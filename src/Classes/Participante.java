@@ -11,6 +11,8 @@ public class Participante extends IPessoa {
         super(nome, TIPO.PARTICIPANTE);
         this.saldo = saldo;
         this.isVip = isVip;
+
+        System.out.println("Participante " + nome + " criado (" + (isVip ? "VIP" : "Normal") + ")");
     }
 
     public boolean isVip() {

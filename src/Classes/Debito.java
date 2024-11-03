@@ -12,6 +12,7 @@ public class Debito implements IPagamento {
             } else {
                 if(participante.getSaldo() < evento.getPrecoBase()) throw new Exception("Saldo Insuficiente!");
             }
+            System.out.println("Participante " + participante.getNome() + " comprou ingresso do tipo " + (participante.isVip() ? "VIP" : "normal") + " para o evento de id " + evento.geteventoId() + " compra feita no débito");
             participante.setIngresso(evento.gerarIngresso(participante.isVip()));
             participante.setSaldo(participante.getSaldo() - participante.getIngresso().getPreco());
         } catch (Exception err) {
