@@ -54,12 +54,12 @@ public class Main {
         System.out.println("4 - Comprar Ingresso");
         System.out.println("5 - Relatório do Evento");
         System.out.println("0 - Encerrar");
-        System.out.print("Escolha uma opção: ");
+        System.out.print("\nEscolha uma opção: ");
         return scanner.nextInt();
     }
 
     public static Organizador criarOrganizador() {
-        System.out.print("Digite o nome do organizador: ");
+        System.out.print("\nDigite o nome do organizador: ");
         String nome = scanner.next();
         System.out.println(" ");
         return new Organizador(nome);
