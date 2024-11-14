@@ -3,20 +3,15 @@ package Classes;
 import Interfaces.IPessoa;
 
 public class Participante extends IPessoa {
-    private boolean isVip;
     private Ingresso ingresso;
     private double saldo;
 
-    public Participante(boolean isVip, String nome, double saldo) {
+    public Participante(String nome, double saldo) {
         super(nome, TIPO.PARTICIPANTE);
         this.saldo = saldo;
-        this.isVip = isVip;
 
-        System.out.println("Participante " + nome + " criado (" + (isVip ? "VIP" : "Normal") + ")");
-    }
 
-    public boolean isVip() {
-        return isVip;
+        System.out.println("Participante " + nome + " criado");
     }
 
     public Ingresso getIngresso() {

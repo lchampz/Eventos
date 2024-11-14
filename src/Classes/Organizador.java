@@ -13,12 +13,12 @@ public class Organizador extends IPessoa {
         System.out.println("Organizador " + nome + " criado");
     }
 
-    public Evento criarEvento(int eventoId, int lotacaoMaxima, double preco_base) {
-        Evento novoEvento = new Evento(eventoId, lotacaoMaxima, preco_base, this);
+    public Evento criarEvento(int lotacaoMaxima, double preco_base, String nome) {
+        Evento novoEvento = new Evento( lotacaoMaxima, preco_base, this, nome);
 
         eventos.add(novoEvento);
 
-        System.out.println("Evento de id " + eventoId + " cadastrado pelo organizador " + this.getNome() + " criado com sucesso!");
+        System.out.println("Evento de nome " + novoEvento.getNome() + " cadastrado pelo organizador " + this.getNome() + " criado com sucesso!");
 
         return novoEvento;
     }

@@ -1,12 +1,19 @@
 package Classes;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class Evento {
-    private final int eventoId;
+    private final UUID eventoId;
     private final int lotacaoMaxima;
     private double precoBase;
     private double precoVip;
+
+    public String getNome() {
+        return nome;
+    }
+
+    private String nome;
     private final Organizador organizador;
     private final ArrayList<Ingresso> ingressosGerados;
     private Relatorio relatorio = new Relatorio(this);
@@ -19,10 +26,11 @@ public class Evento {
         this.precoVip = precoVip;
     }
 
-    public Evento(int eventoId, int lotacaoMaxima, double preco_base, Organizador organizador) {
-        this.eventoId = eventoId;
+    public Evento(int lotacaoMaxima, double preco_base, Organizador organizador, String nome) {
+        this.eventoId = UUID.randomUUID();
         this.lotacaoMaxima = lotacaoMaxima;
         this.precoBase = preco_base;
+        this.nome = nome;
         this.precoVip = (preco_base * 0.5)  + preco_base;
         this.organizador = organizador;
         this.ingressosGerados = new ArrayList<>();
@@ -32,7 +40,7 @@ public class Evento {
         return relatorio;
     }
 
-    public int geteventoId() {
+    public UUID geteventoId() {
         return eventoId;
     }
 
